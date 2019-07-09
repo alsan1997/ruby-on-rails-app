@@ -1,0 +1,21 @@
+<h1>All to-do lists</h1>
+<%= link_to 'Add another TDL', new_todolist_path %>
+<table>
+  <tr>
+    <th>TDL</th>
+    <th></th>
+  </tr>
+ 
+  
+  <% @todolists.each do |todolist| %>
+    <tr>
+      <td><%= todolist.id %></td>
+      <td><%= todolist.tdl %></td>
+      <td><%= todolist.created_at %></td>
+   	  
+   	  <td><%= link_to 'Edit', edit_todolist_path(todolist) %></td>
+   	  <td><%= link_to 'Done', todolist_path(todolist), method: :delete, data: { confirm: 'Please confirm that you are done' } %></td>
+    </tr>
+    
+  <% end %>
+</table>

@@ -1,0 +1,26 @@
+<h1> My products </h1>
+<p>
+<%= link_to "Logout", welcome_index_path %> |
+<%= link_to "Add products", new_user_product_path %>
+</p>
+
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.name %>
+</p>
+ 
+<h2>Products</h2>
+<% @user.products.each do |product| %>
+	<p>
+		<strong>Product_Name: </strong>
+		<%= product.name %>
+		
+
+	
+  	<%= link_to 'Delete', [product.user, product],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+	</p>
+
+<%end%>

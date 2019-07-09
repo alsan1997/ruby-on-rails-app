@@ -1,0 +1,9 @@
+<h1> Added to your products!  </h1>
+
+<p>
+	<strong>Product_name: </strong>
+	<%= @user.product.name %>
+</p>
+
+
+<%= link_to "My products", user_products_path(@user.id) %>
